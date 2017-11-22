@@ -1,0 +1,67 @@
+#tate-logo{
+   width:115px;
+   margin:0;
+}
+article{
+   padding: 8px;
+}
+footer{
+   bottom:0;
+   width:100%;
+   background-color: #00ab9d;
+   background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+   height: 300px;
+}
+
+footer a, footer address{
+   color:white;
+}
+
+footer a{text-decoration: underline;}
+
+footer address, footer .contact{
+   display: inline-block;
+   width:45%;
+   padding:5%;
+}
+
+footer address{
+   left:0;
+   text-align: left;
+}
+footer .contact{
+   right:0;
+   text-align: right;
+}
+
+
+.flexbox{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+.flexcard{
+   width:30%;
+   border:1.2px solid black;
+   border-radius: 12px;
+
+   background: #FFA17F;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to bottom, #00223E, #FFA17F);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to bottom, #00223E, #FFA17F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.flexcard h4{
+   width:70%;
+   padding:0 0 0 1em;
+   color: white;
+}
+
+.flexbox .flexcard .icon-container{
+   width:450px;
+   margin:auto;
+}
+
+.flexbox .flexcard .icon-container .material-icons{
+   color:white;
+}
