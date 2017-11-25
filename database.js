@@ -1,21 +1,24 @@
-var sqlite3 = require('sqlite3').verbose()
-var db = new sqlite3.Database(':memory:')
+//Constants for use throughtout the app
 
-db.serialize(function () {
-  db.run('CREATE TABLE lorem (info TEXT)')
-  var stmt = db.prepare('INSERT INTO lorem VALUES (?)')
+const sqlite3 = require('sqlite3').verbose()
+const db = new sqlite3.Database(':memory:')
+const db = new sqlite3.Database('database.db')
 
-  for (var i = 0; i < 10; i++) {
-    stmt.run('Ipsum ' + i)
+
+
+class artists{
+
+  static showAllArtists() {
+    db.all('SELECT * FROM ARTISTS')
   }
 
-  stmt.finalize()
 
-  db.each('SELECT rowid AS id, info FROM lorem', function (err, row) {
-    console.log(row.id + ': ' + row.info)
-  })
-})
+}
 
+
+
+//close the database
 db.close()
 
+//export the database when this whole method is called
 export db;
