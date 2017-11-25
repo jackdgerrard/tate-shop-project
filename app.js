@@ -1,12 +1,12 @@
 /*
-* EXPRESS CONSTANTS
+* EXPRESS CONSTANTS - for cleaner syntax
  */
 
 const express = require('express');
 const app = express();
 
 /*
-* DATABASE CONSTANTS
+* DATABASE CONSTANTS - for cleaner syntax in render function further down
 */
 
 const artists = require('./database').artists;
@@ -14,7 +14,7 @@ const artwork = require('./database').artwork;
 
 
  /*
- *SET EXPRESS SETTINGS
+ * SET EXPRESS SETTINGS - port number, viewengine(jade/pug), static resources(css, javascript)
  */
 
 app.set('port', process.env.PORT || 3000 );
@@ -24,7 +24,7 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 /*
-* INDEX
+* INDEX - different ways to get to home page
 */
 app.get('/', function (req, res) {
    res.render('index')
@@ -36,23 +36,23 @@ app.get('/', function (req, res) {
 
 
 /*
-* GET ALL ARTISTS
+* GET ALL ARTISTS - renders artists pug template and passes the artists from the database into it
 */
 app.get('/artists',(req, res, next) => {
   artists.all((err, artists) => {
     if (err) return next (err);
-    res.render('artists.pug', {artists:artists});
+    res.render('artists.pug', {artists:artists}); // this is why we set the const further up
   });
 });
 
 /*
-* GET ALL ARTWORK
+* GET ALL ARTWORK - renders artwork pug template and passes the artwork from the database into it
 */
 
 app.get('/artwork',(req, res, next) => {
   artwork.all((err, artists) => {
     if (err) return next (err);
-    res.render('artwork.pug', {artwork:artwork});
+    res.render('artwork.pug', {artwork:artwork}); // this is why we set the const further up
   });
 });
 
@@ -67,4 +67,8 @@ app.get('/log-in', function (req, res) {
   res.render('log-in')
 })
 
+
+/*
+* LAUNCH APP - listen on port set further up, also has node/nodemon print the url to go to for testing/inspection (ctrl + leftclick the link in VScode)
+*/
 app.listen(app.get('port'), () => console.log('go to http://localhost:'+app.get('port')))
