@@ -1,30 +1,58 @@
+/*
+* EXPRESS CONSTANTS
+ */
+
 const express = require('express');
 const app = express();
-const PORT = 3333;
+
+/*
+* DATABASE CONSTANTS
+*/
+
+const artists = require('./database').artists;
+
 
  /*
  *SET STATIC FILES DIRECTORY
  */
 
-app.use(express.static('public'));
-
+app.set('port', process.env.PORT || 3000 );
 app.set('view engine', 'pug');
 
-app.get(app.get('/', function (req, res) {
+
+app.use(express.static('public'));
+
+
+app.get('/', function (req, res) {
    res.render('index')
- }))
+ })
 
- app.get(app.get('/art', function (req, res) {
+app.get('/art', function (req, res) {
   res.render('art')
-}))
+})
+
+/*
+* GET ALL ARTISTS
+*/
+
+app.get('/artists',(req, res, next) => {
+  artists.all((err, artists) => {
+    if (err) return next (err);
+    res.render('artists.pug', {artists:artists});
+  });
 
 
-app.get(app.get('/basket', function (req, res) {
+});
+
+
+
+
+app.get('/basket', function (req, res) {
   res.render('basket')
-}))
+})
 
-app.get(app.get('/log-in', function (req, res) {
+app.get('/log-in', function (req, res) {
   res.render('log-in')
-}))
+})
 
- app.listen(PORT, () => console.log('go to http:/localhost:'+PORT))
+app.listen(app.get('port'), () => console.log('go to http:/localhost:'+app.get('port')))

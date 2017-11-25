@@ -1,0 +1,16 @@
+include header.pug
+h1 Artists
+
+.flexbox
+   for item in artists
+      .flexcard
+         artist.id
+         artist.name
+         artist.gender
+         artist.yearOfBirth
+         -
+         artist.yearOfDeath
+
+
+
+include footer.pug
