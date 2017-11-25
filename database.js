@@ -28,7 +28,10 @@ class artwork{
 //close the database
 //db.close()
 
-//export the database when this whole method is called
+/*
+* EXPORTS
+*/
+
 module.exports = db;
 module.exports.artists=artists;
 module.exports.artwork=artwork;
