@@ -8,8 +8,12 @@ const db = new sqlite3.Database('database.db')
 
 class artists{
 
-  static showAllArtists() {
-    db.all('SELECT * FROM ARTISTS')
+  static showAllArtists(cb) {
+    db.all('SELECT * FROM ARTISTS', cb)
+  }
+
+  static find(id, cb){
+    db.get('SELECT * FROM ARTISTS WHERE ID=?', id, cb)
   }
 
 
