@@ -2,10 +2,10 @@ include header.pug
 
 h2 Artwork
 
-.flexbox
+.flexbox(class="z-depth-5")
    for item in artwork
       .flexcard
-         p(class='id')=item.id
+         p(class='id')= item.id
          h4=item.title
          p=item.accession_number
          p=item.artist
@@ -26,6 +26,6 @@ h2 Artwork
          p=item.thumbnailUrl
          p=item.url
 
-
+console.log(artwork)
 include footer.pug
 

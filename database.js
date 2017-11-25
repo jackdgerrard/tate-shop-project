@@ -17,11 +17,11 @@ class artists{
 class artwork{
 
     static all(cb){
-      db.all('SELECT * FROM artwork', cb)
+      db.all('SELECT * FROM ARTWORK', cb)
     }
 
     static find(id, cb){
-      db.get('SELECT * FROM artwork WHERE ID=?', id, cb)
+      db.get('SELECT * FROM ARTWORK WHERE ID=?', id, cb)
     }
   }
 
