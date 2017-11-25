@@ -16,20 +16,20 @@ class artists{
 
 class artwork{
 
-    static all(cb) {
-      db.all('SELECT * FROM ARTWORK', cb)
+    static all(cb){
+      db.all('SELECT * FROM artwork', cb)
     }
 
     static find(id, cb){
-      db.get('SELECT * FROM ARTWORK WHERE ID=?', id, cb)
+      db.get('SELECT * FROM artwork WHERE ID=?', id, cb)
     }
   }
 
 //close the database
-
+//db.close()
 
 //export the database when this whole method is called
 module.exports = db;
 module.exports.artists=artists;
+module.exports.artwork=artwork;
 
-//db.close()

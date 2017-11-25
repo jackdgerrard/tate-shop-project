@@ -23,19 +23,21 @@ app.set('view engine', 'pug');
 
 app.use(express.static('public'));
 
-
+/*
+* INDEX
+*/
 app.get('/', function (req, res) {
    res.render('index')
  })
 
-app.get('/artwork', function (req, res) {
-  res.render('artwork')
+ app.get('/index', function (req, res) {
+  res.render('index')
 })
+
 
 /*
 * GET ALL ARTISTS
 */
-
 app.get('/artists',(req, res, next) => {
   artists.all((err, artists) => {
     if (err) return next (err);
@@ -55,6 +57,8 @@ app.get('/artwork',(req, res, next) => {
 });
 
 
+
+
 app.get('/basket', function (req, res) {
   res.render('basket')
 })
@@ -63,4 +67,4 @@ app.get('/log-in', function (req, res) {
   res.render('log-in')
 })
 
-app.listen(app.get('port'), () => console.log('go to http:/localhost:'+app.get('port')))
+app.listen(app.get('port'), () => console.log('go to http://localhost:'+app.get('port')))
