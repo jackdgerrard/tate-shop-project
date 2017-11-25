@@ -1,0 +1,30 @@
+include header.pug
+h2 Artwork
+
+.flexbox
+   for item in artwork
+      .flexcard
+         h3=item.title
+         p=item.id
+         p=item.accession_number
+         p=item.artist
+         p=item.artistRole
+         p=item.artistId
+         p=item.dateText
+         p=item.medium
+         p=item.creditLine
+         p=item.year
+         p=item.acquisitionYear
+         p=item.dimensions
+         p=item.width
+         p=item.height
+         p=item.depth
+         p=item.units
+         p=item.inscription
+         p=item.thumbnailCopyright
+         p=item.thumbnailUrl
+         p=item.url
+
+
+include footer.pug
+

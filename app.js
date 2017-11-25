@@ -10,10 +10,11 @@ const app = express();
 */
 
 const artists = require('./database').artists;
+const artwork = require('./database').artwork;
 
 
  /*
- *SET STATIC FILES DIRECTORY
+ *SET EXPRESS SETTINGS
  */
 
 app.set('port', process.env.PORT || 3000 );
@@ -27,8 +28,8 @@ app.get('/', function (req, res) {
    res.render('index')
  })
 
-app.get('/art', function (req, res) {
-  res.render('art')
+app.get('/artwork', function (req, res) {
+  res.render('artwork')
 })
 
 /*
@@ -40,11 +41,18 @@ app.get('/artists',(req, res, next) => {
     if (err) return next (err);
     res.render('artists.pug', {artists:artists});
   });
-
-
 });
 
+/*
+* GET ALL ARTWORK
+*/
 
+app.get('/artwork',(req, res, next) => {
+  artwork.all((err, artists) => {
+    if (err) return next (err);
+    res.render('artwork.pug', {artwork:artwork});
+  });
+});
 
 
 app.get('/basket', function (req, res) {

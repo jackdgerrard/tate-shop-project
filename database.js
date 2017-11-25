@@ -14,6 +14,17 @@ class artists{
   }
 }
 
+class artwork{
+
+    static all(cb) {
+      db.all('SELECT * FROM ARTWORK', cb)
+    }
+
+    static find(id, cb){
+      db.get('SELECT * FROM ARTWORK WHERE ID=?', id, cb)
+    }
+  }
+
 //close the database
 
 
