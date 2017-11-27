@@ -1,9 +1,9 @@
 include header.pug
 h2 Artists
 
-.flexbox(class="z-depth-5")
+.flexbox
    for item in artists
-      .flexcard
+      .flexcard(class="z-depth-5")
          p(class='id')=item.id
          h4=item.name
          p= 'gender:'+ item.gender

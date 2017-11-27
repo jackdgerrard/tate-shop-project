@@ -2,11 +2,9 @@ include header.pug
 
 h2 Artwork
 
-console.log(artwork)
-
-.flexbox(class="z-depth-5")
+.flexbox
    for item in artwork
-      .flexcard
+      .flexcard(class="z-depth-5")
          p(class='id')= item.id
          h4=item.title
          img(item.thumbnailUrl alt='thumbnail of'+item.id)
@@ -26,9 +24,6 @@ console.log(artwork)
          p=item.units
          p=item.inscription
          p=item.thumbnailCopyright
-
          p=item.url
 
-console.log(artwork)
 include footer.pug
-
