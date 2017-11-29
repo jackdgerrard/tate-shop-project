@@ -14,7 +14,8 @@ const artwork = require('./database').artwork;
 /*
  * SET EXPRESS SETTINGS - port number, viewengine(jade/pug), static resources(css, javascript)
  */
-app.set('port', process.env.PORT || 3000); //CHANGE THIS IF 3000 IN USE
+//CHANGE THIS IF 3000 IN USE
+app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 
@@ -27,6 +28,10 @@ app.get('/', function (req, res) {
 
 app.get('/index', function (req, res) {
   res.render('index')
+})
+
+app.get('/admin', function (req, res) {
+  res.render('admin')
 })
 
 /*
@@ -45,7 +50,7 @@ app.get('/artists', (req, res, next) => {
  * GET ALL ARTWORK - renders artwork pug template and passes the artwork from the database into it
  */
 app.get('/artwork', (req, res, next) => {
-  artwork.all((err, artists) => {
+  artwork.all((err, artwork) => {
     if (err) return next(err);
     res.render('artwork.pug', {
       artwork: artwork

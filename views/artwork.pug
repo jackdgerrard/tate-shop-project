@@ -1,29 +1,17 @@
 include header.pug
 
-h2 Artwork
+   h2 Artwork
 
-.flexbox
-   for item in artwork
-      .flexcard(class="z-depth-5")
-         p(class='id')= item.id
-         h4=item.title
-         img(item.thumbnailUrl alt='thumbnail of'+item.id)
-         p=item.accession_number
-         p=item.artist
-         p=item.artistRole
-         p=item.artistId
-         p=item.dateText
-         p=item.medium
-         p=item.creditLine
-         p=item.year
-         p=item.acquisitionYear
-         p=item.dimensions
-         p=item.width
-         p=item.height
-         p=item.depth
-         p=item.units
-         p=item.inscription
-         p=item.thumbnailCopyright
-         p=item.url
+   .flexbox
+         each item in artwork
+            .flexcard
+               p(class='id')=item.id
+               h4=item.title
+               img(src=item.thumbnailUrl)
+               p=item.medium
+               p=item.creditLine
+               p="€"+item.price+".00"
+               button add to order
 
+include review.pug
 include footer.pug

@@ -2,15 +2,15 @@ include header.pug
 h2 Artists
 
 .flexbox
-   for item in artists
+   each item in artists
       .flexcard(class="z-depth-5")
          p(class='id')=item.id
          h4=item.name
+         <i class="large material-icons">person</i>
          p= 'gender:'+ item.gender
          if(item.yearOfDeath==null)
             p= 'born: '+ item.yearOfBirth
          else
             p= 'born/died: '+ item.yearOfBirth +' - ' +item.yearOfDeath
-
 
 include footer.pug
