@@ -1,0 +1,27 @@
+include header.pug
+h2 Log in or sign up
+
+.flexbox
+   .flexcard(class="z-depth-5")
+      h4 log in
+      form
+         label full name
+         input
+         label username
+         input
+         label password
+         input
+         button(onlick="login()") Log In
+
+   .flexcard(class="z-depth-5")
+      h4 create new account
+      form
+         label full name
+         input
+         label username
+         input
+         label password
+         input
+         button(onlick="createUser()") Create new account
+
+include footer.pug

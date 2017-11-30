@@ -45,14 +45,16 @@ footer .contact{
 }
 
 .flexcard{
-   width:30%;
+   width:45%;
+   height: 60%;
    border-radius: 12px;
-   margin-bottom: 8px;
+   margin:8px;
 
    background: #2c3e50;  /* fallback for old browsers */
    background: -webkit-linear-gradient(to top, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
    background: linear-gradient(to top, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 
 .flexcard h4{
    padding:0 0 0 1em;
@@ -82,4 +84,12 @@ footer .contact{
    padding:1em;
    font-size: 1em;
    color:white;
+}
+
+.review{
+   position: fixed;
+   bottom:0;
+   width: 18vw;
+   background-color: white;
+   padding: 1em;
 }

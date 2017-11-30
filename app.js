@@ -67,6 +67,13 @@ app.get('/log-in', function (req, res) {
 })
 
 /*
+ * USERS - log in or create account
+ */
+app.get('/users', function (req, res) {
+  res.render('users')
+})
+
+/*
  * LAUNCH APP - listen on port set further up, also has node/nodemon print the url to go to for testing/inspection
  */
 app.listen(app.get('port'), () => console.log('go to http://localhost:' + app.get('port')))
