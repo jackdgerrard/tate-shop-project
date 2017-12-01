@@ -73,6 +73,8 @@ app.get('/users', function (req, res) {
   res.render('users')
 })
 
+users.
+
 /*
  * LAUNCH APP - listen on port set further up, also has node/nodemon print the url to go to for testing/inspection
  */

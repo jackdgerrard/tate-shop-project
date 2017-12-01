@@ -32,6 +32,16 @@ class artwork {
           db.all('SELECT * FROM users', cb)
         }
 
+        static addUser(cb) { // add new user json object to database in string format
+          db.put('Insert user  into  users(jsonObject.toString())', cb)
+        }
+
+        static getUser(cb) { // add new user json object to database in string format
+          db.get('select  users from  users(jsonObject.toString())', cb)
+        }
+
+
+
       }
 
 
