@@ -11,7 +11,9 @@ include header.pug
                p=item.medium
                p=item.creditLine
                p="€"+item.price+".00"
-               button add to order
+               form(width="250px")
+                  label quantity
+                  input(type="number")
+                  button add to order
 
-include review.pug
 include footer.pug

@@ -3,6 +3,15 @@
    margin:0;
 }
 
+*{
+    font-family: 'Courgette', cursive;
+}
+
+h1, h2, h3, h4,h5,footer, nav{
+    font-family: 'Poiret One', cursive;
+}
+
+
 h1, h2{padding-left:1em;}
 article{
    padding: 8px;
@@ -40,7 +49,7 @@ footer .contact{
 .flexbox{
    display: flex;
     flex-direction: row;
-   justify-content: space-between;;
+   justify-content: space-between;
    flex-wrap: wrap;
 }
 
@@ -48,7 +57,6 @@ footer .contact{
    width:45%;
    height: 60%;
    border-radius: 12px;
-   margin:8px;
 
    background: #2c3e50;  /* fallback for old browsers */
    background: -webkit-linear-gradient(to top, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
@@ -77,13 +85,23 @@ footer .contact{
 
 .flexbox .id{
    color:white;
-   font-family: serif;
 }
 
 .flexbox p{
+    font-size: 16px;
    padding:1em;
-   font-size: 1em;
    color:white;
+}
+
+.flexcard form{
+    width: 360px;
+    color:white;
+}
+
+.flexcard button{
+    background: rgb(255, 174, 0);
+    border-radius: 12px;
+
 }
 
 .review{

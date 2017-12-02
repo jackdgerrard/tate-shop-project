@@ -1,16 +1,19 @@
 include header.pug
-h2 Artists
+h2 Browse artwork by artist
 
-.flexbox
-   each item in artists
-      .flexcard(class="z-depth-5")
-         p(class='id')=item.id
-         h4=item.name
-         <i class="large material-icons">person</i>
-         p= 'gender:'+ item.gender
-         if(item.yearOfDeath==null)
-            p= 'born: '+ item.yearOfBirth
-         else
-            p= 'born/died: '+ item.yearOfBirth +' - ' +item.yearOfDeath
+      .flexbox
+            each item in artwork
+                  .flexcard(class="z-depth-5")
+                        p(class='id')=item.id
+                        h4=item.title
+                        h4= item.artist
+                        img(src=item.thumbnailUrl)
+                        p=item.medium
+                        p=item.creditLine
+                        p="€"+item.price+".00"
+                        form(width="250px")
+                              label quantity
+                              input(type="number")
+                              button add to order
 
 include footer.pug

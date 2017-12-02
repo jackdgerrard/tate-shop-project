@@ -7,13 +7,12 @@ const app = express();
 /*
  * DATABASE CONSTANTS - for cleaner syntax in render function further down
  */
-
-const artists = require('./database').artists;
 const artwork = require('./database').artwork;
 
 /*
  * SET EXPRESS SETTINGS - port number, viewengine(jade/pug), static resources(css, javascript)
  */
+
 //CHANGE THIS IF 3000 IN USE
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'pug');
@@ -35,24 +34,31 @@ app.get('/admin', function (req, res) {
 })
 
 /*
- * GET ALL ARTISTS - renders artists pug template and passes the artists from the database into it
+ * GET ALL ARTWORK - renders artwork pug template and passes the artwork from the database into it
  */
-app.get('/artists', (req, res, next) => {
-  artists.all((err, artists) => {
-    if (err) return next(err);
-    res.render('artists.pug', {
-      artists: artists
+app.get('/artwork', (req, res) => {
+  artwork.all((err, artwork) => {
+    res.render('artwork.pug', {
+      artwork: artwork
     }); // this is why we set the const further up
   });
 });
-
 /*
- * GET ALL ARTWORK - renders artwork pug template and passes the artwork from the database into it
+ * GET ARTWORK BY ARTISTS- renders artwork pug template and passes the artwork from the database into it
  */
-app.get('/artwork', (req, res, next) => {
-  artwork.all((err, artwork) => {
-    if (err) return next(err);
-    res.render('artwork.pug', {
+app.get('/artists', (req, res) => {
+  artwork.artists((err, artwork) => {
+    res.render('artists.pug', {
+      artwork: artwork
+    }); // this is why we set the const further up
+  });
+});
+/*
+ * GET ARTWORK BY PRICE - renders artwork pug template and passes the artwork from the database into it
+ */
+app.get('/price', (req, res) => {
+  artwork.price((err, artwork) => {
+    res.render('price.pug', {
       artwork: artwork
     }); // this is why we set the const further up
   });
@@ -72,8 +78,6 @@ app.get('/log-in', function (req, res) {
 app.get('/users', function (req, res) {
   res.render('users')
 })
-
-users.
 
 /*
  * LAUNCH APP - listen on port set further up, also has node/nodemon print the url to go to for testing/inspection

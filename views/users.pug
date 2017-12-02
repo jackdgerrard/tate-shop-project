@@ -5,23 +5,21 @@ h2 Log in or sign up
    .flexcard(class="z-depth-5")
       h4 log in
       form
-         label full name
-         input
          label username
-         input
+         input(required)
          label password
-         input
+         input(required)
          button(onlick="login()") Log In
 
    .flexcard(class="z-depth-5")
       h4 create new account
       form
          label full name
-         input
+         input(required)
          label username
-         input
+         input(required)
          label password
-         input
+         input(required)
          button(onlick="createUser()") Create new account
 
 include footer.pug

@@ -2,7 +2,7 @@ doctype html
 html
       head
             title="TATE"
-            link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+            link(href="https://fonts.googleapis.com/icon?family=Material+Icons|Courgette|Poiret+One", rel="stylesheet")
             link(type="text/css", rel="stylesheet", href="css/materialize.min.css",  media="screen,projection")
             link(type="text/css", rel="stylesheet", href="css/style.css",  media="screen,projection")
 
@@ -16,9 +16,13 @@ html
                   .nav-wrapper
                         ul(id="nav-mobile" class="left hide-on-med-and-down")
                               li
-                                    a(href="/artwork") Artwork
+                                    a(href="/artwork") Browse all artwork
                               li
-                                    a(href="/artists") Artists
+                                    a(href="/artists") Browse artwork by artist
+                              li
+                                    a(href="/artists" disabled) Browse artwork genre
+                              li
+                                    a(href="/price" ) Browse artwork price
                               li
                                     a(href="/Cart") Cart
                               li

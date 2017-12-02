@@ -1,0 +1,19 @@
+include header.pug
+
+   h2 Browse artwork by price
+
+   .flexbox
+         each item in artwork
+            .flexcard(class="z-depth-5")
+               p(class='id')=item.id
+               h4=item.title
+               img(src=item.thumbnailUrl)
+               p=item.medium
+               p=item.creditLine
+               p="€"+item.price+".00"
+               form(width="250px")
+                  label quantity
+                  input(type="number")
+                  button add to order
+
+include footer.pug

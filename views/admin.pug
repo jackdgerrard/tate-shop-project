@@ -2,14 +2,60 @@ include header.pug
 
 .flexbox
    .flexcard
-      h4 add user
-   .flexcard
       h4 delete user
-   .flexcard
-      h4 add artist
-   .flexcard
-      h4 delete artist
-   .flexcard
-      h4 add artwork
+      form(width="250px")
+             label userID
+             input(type="text")
+             button <i class="material-icons">forward</i>
    .flexcard
       h4 delete artwork
+      form(width="250px")
+             label ID of artwork
+             input(type="text")
+             button <i class="material-icons">forward</i>
+
+form(action="create-artwork")
+      h4 add artwork
+      label ID
+      input(type="text")
+      label accession number
+      input(type="text")
+      label artist
+      input(type="text")
+      label artist Role
+      input(type="text")
+      label artist ID
+      input(type="text")
+      label artwork Title
+      input(type="text")
+      label date Text
+      input(type="text")
+      label medium
+      input(type="text")
+      label Credit Line
+      input(type="text")
+      label year
+      input(type="text")
+      label acquisition year
+      input(type="text")
+      label dimensions
+      input(type="text")
+      label width
+      input(type="text")
+      label height
+      input(type="text")
+      label depth
+      input(type="text")
+      label units
+      input(type="text")
+      label inscription
+      input(type="text")
+      label thumbnail copyright
+      input(type="text")
+      label thumbnail URL
+      input(type="text")
+      label url
+      input(type="text")
+      label price
+      input(type="text")
+      button <i class="material-icons">forward</i>
