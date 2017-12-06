@@ -1,0 +1,4 @@
+My screen recording software output the file as an FLV which you can open with VLC media player.
+ Alternatively I put it as an unlisted video on youtube here: 
+
+https://www.youtube.com/watch?v=dRMBJ2NX3F0&feature=youtu.be
