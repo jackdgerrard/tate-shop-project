@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "materialize-css": "^0.100.2",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^3.0.1",
     "sqlite": "^2.8.0",
     "sqlite3": "^3.1.13"
   },
